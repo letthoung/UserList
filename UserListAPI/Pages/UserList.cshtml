@@ -1,0 +1,41 @@
+﻿@page
+@model UserListAPI.Pages.UserListModel
+@{
+    ViewData["Title"] = "User List";
+}
+
+<h1>UserList</h1>
+<table class="table" id="userlist"></table>
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/node_modules/datatables.net/js/jquery.dataTables.js"></script>
+        <script src="~/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+        <link href="~/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+        <script src="~/node_modules/phoneify/phoneify.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css" />
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+    </environment>
+
+    <script>
+        $(function () {
+            $.ajax("/api/UserList", { method: "get" })
+                .then(function (response) {
+                    $('#userlist').dataTable({
+                        ordering: true,
+                        data: response,
+                        columns: [
+                            { title: "Last Name", data: "lname" },
+                            { title: "First Name", data: "fname" },
+                            { title: "User Name", data: "uname"},
+                            { title: "Ext", data: "ext" },
+                            { title: "Did Number", data: "didnumber" },
+                            { title: "Cell Phone", data: "phoneCell"/*, "render": function (data) { return new phoneify(data); } */}
+                        ]
+                    });
+                });
+        });
+    </script>
+}

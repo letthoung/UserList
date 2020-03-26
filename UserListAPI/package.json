@@ -1,0 +1,44 @@
+{
+  "name": "userlist",
+  "version": "1.0.0",
+  "description": "Show all the internal users",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/letthoung/UserList.git"
+  },
+  "keywords": [
+    "C#",
+    "dotNET",
+    "Core",
+    "3.1",
+    "Entity",
+    "Framework",
+    "Core",
+    "3.1",
+    "MS",
+    "SQL",
+    "Server",
+    "Razor",
+    "Pages",
+    "jQuery"
+  ],
+  "author": "Tung Le",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/letthoung/UserList/issues"
+  },
+  "homepage": "https://github.com/letthoung/UserList#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "datatables.net": "^1.10.20",
+    "datatables.net-bs4": "^1.10.20",
+    "jquery": "^3.4.1",
+    "jquery-validation": "^1.19.1",
+    "jquery-validation-unobtrusive": "^3.2.11",
+    "phoneify": "^1.1.3"
+  }
+}
